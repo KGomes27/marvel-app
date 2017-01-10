@@ -1,0 +1,19 @@
+<div class="content">
+  <div class="comic-container" ng-repeat="comic in comics">
+    <div class="header">
+      <div class="title">{{comic.title}}</div>
+    </div>
+    <div class="row row-top">
+      <div class="col col-33">
+        <img ng-if="comic.images[0].path || comic.images[0].extension" class="comic-img" src="{{comic.images[0].path + '.' + comic.images[0].extension}}"></img>
+        <img ng-if="!comic.images[0].path || !comic.images[0].extension" class="comic-img" src="img/no-image.png"></img>
+        {{comic.dates[0].date | date:'yyyy'}}</br>
+        {{comic.prices[0].price | currency}}
+      </div>
+      <div class="col col-67">
+        {{comic.description}}
+        <div ng-if="!comic.description" class="no-description">NO DESCRIPTION AVAILABLE</div>
+      </div>
+    </div>
+  </div>
+</div>

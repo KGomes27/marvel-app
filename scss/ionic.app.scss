@@ -1,0 +1,84 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+.bar-header {
+  height: 13%;
+  .logo {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.has-header {
+  top: 70px;
+}
+
+.view-container {
+  .content {
+    background: #f2f2f2;
+    overflow: scroll;
+  }
+}
+
+.comic-container {
+  background: black;
+  height: 320px;
+  color: white;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 9%;
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  line-height: 22px;
+
+  .header {
+    background: red;
+    background: -webkit-linear-gradient(left top, red, darkred); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, red, darkred); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, red, darkred); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, red, darkred); /* Standard syntax (must be last) */
+    height: 19%;
+    overflow: hidden;
+    .title {
+      font-size: 20px;
+      text-align: center;
+      line-height: 30px;
+      font-weight: bold;
+    }
+  }
+
+  .comic-img {
+    width: 100%;
+  }
+
+  .no-description {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+
+

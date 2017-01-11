@@ -1,0 +1,23 @@
+<div class="content">
+  <div class="comic-detail">
+    <i ui-sref="home" class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i>
+
+    <div class="image" ng-repeat="image in comic.images">
+      <img class="comic-img" ng-if="image.path || image.extension" src="{{image.path + '.' + image.extension}}"></img>
+    </div>
+
+    <span class="title"> {{comic.title}} </span></br>
+    {{comic.description}} </br>
+
+    <div class="comic-info" ng-if="comic.characters.available">
+      <span class="title"> Characters </span></br>
+      <span ng-repeat="character in comic.characters.items"> {{character.name}} </br></span>
+    <div>     
+
+    <div class="comic-info" ng-if="comic.creators.available">
+      <span class="title"> Creators </span></br>
+      <span ng-repeat="creator in comic.creators.items"> {{creator.name}} </br></span>
+    <div>     
+
+  </div>
+</div>

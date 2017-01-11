@@ -1,6 +1,19 @@
 <div class="content">
+  <div class="search">
+    <div class="row"> 
+      <span>Search by title: </span> 
+      <input type="text" ng-model="searchTitle"> 
+    </div>
+    <div class="row"> 
+      <span>Search by year: </span> 
+      <input type="text" ng-model="searchYear"> 
+    </div>
+    <div class="row">
+      <input type="submit" ng-click="search()" value="Search"> 
+    </div>      
+  </div>
   <div class="comic-container" ng-repeat="comic in comics">
-    <div class="header">
+    <div class="header" ui-sref="detail({comic: comic})">
       <div class="title">{{comic.title}}</div>
     </div>
     <div class="row row-top">
@@ -9,8 +22,11 @@
         <img ng-if="!comic.images[0].path || !comic.images[0].extension" class="comic-img" src="img/no-image.png"></img>
         {{comic.dates[0].date | date:'yyyy'}}</br>
         {{comic.prices[0].price | currency}}
+        <div class="detail" ui-sref="detail({comic: comic})">
+          View detail <i class="fa fa-arrow-circle-right fa-1x" style="margin-left: 2%;" aria-hidden="true"></i>
+        </div>
       </div>
-      <div class="col col-67">
+      <div class="col col-67 description">
         {{comic.description}}
         <div ng-if="!comic.description" class="no-description">NO DESCRIPTION AVAILABLE</div>
       </div>

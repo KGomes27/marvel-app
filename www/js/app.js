@@ -9,10 +9,13 @@ angular.module('marvel', ['ionic'])
     templateUrl: 'js/components/list/list.html',
     controller: 'ListController'
   })
-  .state('news', {
+  .state('detail', {
     url: '/detail',
     templateUrl: 'js/components/detail/detail.html',
-    controller: 'DetailController'
+    controller: 'DetailController',
+    params: {
+      comic: null
+    }
   })
 
   $urlRouterProvider.otherwise("/");
